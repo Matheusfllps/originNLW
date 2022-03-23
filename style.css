@@ -1,21 +1,55 @@
+/* reset */
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  max-width: 375px;
-  margin: auto;
-  
 }
-header{
-  margin-top: 20px;
+img{
+  width: 100%;
+  height: auto;
+}
+a{
+  text-decoration: none;
+}
+/* Variables */
+:root{
+  /* font-size: 100%;o navegador tem por padão 16px */
+--red: red;
+
+
+
+
+}
+/* base */
+body{
+  font: 400 1rem 'DM Sans', sans-serif;
+}
+h1{
+  font: 700 1.875rem 'Poppins', sans-serif;
+}
+
+
+/* layout */
+
+#header{
+height: 4.5rem;
+}
+nav{
   display: flex;
   justify-content: space-between;
-  /* max-width: 375px; */
-  align-items: center;
-  /* margin: auto; */
-  /* max-width: 37.5rem; */
 }
-header h1{
+/* .logo{
+} */
+.container{
+  width: 100%;
+  /* margin: 0 auto;zero cima exbaixo e auto da esquerda para direita iso centraliza o conteúdo */
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+
+/* home */
+/* header h1{
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
   text-align: center;
@@ -41,4 +75,4 @@ main h1{
 main p{
   font-family: 'DM Sans', sans-serif;
   color: #767676;
-}
+} */
