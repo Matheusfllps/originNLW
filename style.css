@@ -312,3 +312,40 @@ main {
   font-size: 1.5rem;
   margin-bottom: 0.75rem;
 }
+
+/* testimunials */
+#testimonials{
+  background: white;
+}
+#testimonials blockquote{
+  padding: 2rem;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
+  border-radius: .25rem;
+}
+
+#testimonials blockquote p {
+position: relative;/* no caso o span é relativo ao p*/
+text-indent: 1.875rem;
+margin-bottom: 1.5rem;
+color: var(--title-color)
+}
+#testimonials blockquote p span {
+  font: 700 2.5rem serif;
+  position: absolute;/*cria uma camada que sobrepõe a que ele for relativa*/
+  top: -0.5rem;
+  left: -1.875rem;
+  color: var(--base-color)
+
+}
+#testimonials cite{
+display: flex;
+align-items: center;
+font-style: normal;
+}
+#testimonials cite img{
+  width: 2rem;
+  height: 2rem;
+  object-fit: cover;/* faz a imagem caber cobrindo o to espaço disponivel definido pelo width e pelo height*/
+  clip-path: circle();/*cria uma máscara na imagem que pode ter varios fomatos  */
+  margin-right: .5rem;
+}
