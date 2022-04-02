@@ -347,5 +347,11 @@ font-style: normal;
   height: 2rem;
   object-fit: cover;/* faz a imagem caber cobrindo o to espaço disponivel definido pelo width e pelo height*/
   clip-path: circle();/*cria uma máscara na imagem que pode ter varios fomatos  */
-  margin-right: .5rem;
+  margin-right: 0.5rem;
+}
+/* swiper */
+
+.swiper-slide{
+  height: auto;
+  padding: 4rem 1rem;
 }
