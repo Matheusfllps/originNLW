@@ -44,21 +44,37 @@ window.addEventListener('scroll', function () {
 })
 
 // TESTIMONIALS CAROUSEL SLIDER SWIPER
-// const swiper = new Swiper('.swiper-container', {
-//   slidesPerView: 1,
-//   pagination: {
-//     el: 'swiper-pagination'
-//   },
-//   mousewheel: true,
-//   Keyboard: true
-// }) 
-const swiper = new Swiper('.swiper', {
-  slidesPerView: 1,
-    pagination: {
-      el: 'swiper-pagination'
-    },
-    mousewheel: true,
-    Keyboard: true
-});
-// Now you can use all slider methods like
-// swiper.slideNext();
+const swiper = new Swiper('.swiper-container', {
+  slidesPerView: 1,//pode ver um slide por vez
+  pagination: {
+    el: 'swiper-pagination'
+  },
+  mousewheel: true,
+  Keyboard: true
+}) 
+// scrollreveal: mostra os elementos quando der scroll na página
+const scrollreveal =  ScrollReveal({
+  origin: "top",
+  distance: "30px",
+  duration: 700,
+  reset: true
+})
+scrollreveal.reveal(`
+#home .image, #home .text,
+#about .image, #about .text,
+#services header, #services .card,
+testimonials header, #testimonials .testimonials,
+#contact .text, #contact .links,
+footer .brand, footer .social`,
+{interval: 100})
+
+// Botão voltar para o topo
+
+const backToTopButton = document.querySelector(".back-to-top")
+window.addEventListener("scroll", function() {
+  if(window.scrollY >= 560){
+    backToTopButton.classList.add("show")
+  }else{
+    backToTopButton.classList.remove("show")
+  }
+})
