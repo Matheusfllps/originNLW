@@ -29,6 +29,13 @@ a {
   --text-color: hsl(0 0% 46%);
   --text-color-light: hsl(0 0% 98%);
   --body-color: hsl(0 0% 98%);
+
+  /* fonts */
+  --title-font-size: 1.875rem;
+  --subtitle-font-size: 1rem;
+
+  --title-font: 'Poppins', sans-serif;
+  --body-font: 'DM Sans', sans-serif;
 }
 /* base */
 html {
@@ -36,13 +43,13 @@ html {
 }
 
 body {
-  font: 400 1rem 'DM Sans', sans-serif;
+  font: 400 1rem var(--body-font);
   color: var(--text-color);
   background: var(--body-color);
   -webkit-font-smoothing: antialiased;
 }
 .title {
-  font: 700 1.875rem 'Poppins', sans-serif;
+  font: 700  var(--title-font-size) var(--title-font);
   color: var(--title-color);
   -webkit-font-smoothing: auto;
 }
@@ -55,7 +62,7 @@ body {
   align-items: center;
   padding: 0 2rem; /* */
   border-radius: 0.25rem;
-  font: 500 1rem 'DM Sans', sans-serif;
+  font: 500 1rem var(--body-font);
   transition: background 0.3s;
 }
 .button:hover {
@@ -89,10 +96,13 @@ body {
   gap: 2rem;
 }
 .section {
-  padding: 5rem 0;
+  padding: calc(5rem  + var(--header-height)) 0;
 }
-section .title {
+.section .title {
   margin-bottom: 1rem;
+}
+.section .subtitle{
+   font-size: var(--subtitle-font-size)
 }
 .section header {
   margin-bottom: 4rem;
@@ -118,7 +128,7 @@ section .title {
 }
 /* Logo */
 .logo {
-  font: 700 1.31rem 'Poppins', sans-serif;
+  font: 700 1.31rem var(--title-font);
   color: var(--title-color);
 }
 .logo span {
@@ -211,11 +221,7 @@ nav.show div.icon-close {
   top: 1.5rem;
 }
 
-main {
-  margin-top: calc(
-    var(--header-height) + 2rem
-  ); /* a função calc serve para os operadores (*,+,-,/)e ela  */
-}
+
 
 /* home */
 #home {
@@ -405,6 +411,8 @@ font-style: normal;
 /* Footer */
 footer {
   background: var(--base-color);
+} footer.section{
+  padding: 4rem 0;
 }
 footer .logo{/* o elemento [ a ] tem como display padão o inline e no display inline não tem a opação de color o margin-botton*/
   display: inline-block;/*por isso usa o inline-block para habilitar essa opção*/
@@ -421,8 +429,11 @@ footer i{
   color: var(--text-color-light)
 }
 footer .social {
-   display: flex;
-   gap: 2rem;
+  grid-auto-flow: column;
+  width: fit-content;
+  
+  /* display: flex;
+   gap: 2rem; */
   /* margin-right: 2rem; */
 }
 footer .social a{
@@ -461,3 +472,71 @@ footer .social a{
   opacity: 1;
   transform: translateY(0)
 }
+/* MEDIA QUERIES */
+/*EXTRA LARGE DEVICES: 1200 >  */
+@media (min-width: 1200px) {
+  .container{
+    max-width: 1120px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  section{
+    padding: 10rem 0;
+  }
+  nav .menu{
+    visibility: visible;
+    opacity: 1;
+    top: 0;
+  }
+  nav .menu ul{
+    display: flex;
+    gap: 2rem;
+  } 
+  nav .menu ul li a.title{
+
+    font: 400 1rem var(--body-font)
+  }
+  nav .icon-menu{
+    display: none;
+  }
+  /* home  */
+
+  #home .container{
+    grid-auto-flow: column; /* coloca os filhos da caixa de grid um ao lado do outro */
+    /*width: fit-content;*//* adequa o espaço para encaixar os elemetos */
+    justify-content: space-between;
+  }
+
+  #home .image{
+
+    order: 1;
+
+  }
+  #home .text{
+
+    order: 0;
+
+  }
+
+
+
+  main {
+    margin-top: var(--header-height);
+    /* margin-top: calc(
+      var(--header-height) + 2rem
+    ); /* a função calc serve para os operadores (*,+,-,/)e ela  */
+  }
+} 
+/* LARGE DEVICES 1023 >   */
+/*LARGE DEVICES 992 >  */
+@media (min-width: 992px){
+:root {
+--title-font-size: 2.25rem;
+--subtitle-font-size: 1.125rem;
+} 
+ /* .title{
+   font-size: 2.2rem;
+ } */
+}
+/* MEDIUM DEVICES 767 >  */
+
